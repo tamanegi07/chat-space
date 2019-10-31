@@ -22,3 +22,50 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## userテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true, unique: true|
+|mail|string|null: false|
+
+### Association
+- has_many :group_user
+- has_many :group, through: :group_user
+- has_many :message
+
+## groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
+## groupテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|group_name|string|null: false|
+
+### Association
+- has_many :group_user
+- has_many :user, through: :group_user
+- has_many :message
+
+## commentテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+|img|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
