@@ -31,11 +31,11 @@ Things you may want to cover:
 |mail|string|null: false|
 
 ### Association
-- has_many :group_user
-- has_many :group, through: :group_user
-- has_many :message
+- has_many :groups_users
+- has_many :groups, through: :groups_users
+- has_many :messages
 
-## groups_usersテーブル
+## groups_userテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -50,12 +50,12 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ### Association
-- has_many :group_user
-- has_many :user, through: :group_user
-- has_many :message
+- has_many :groups_users
+- has_many :users, through: :groups_users
+- has_many :messages
 
 ## commentテーブル
 
