@@ -40,7 +40,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
@@ -60,7 +60,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails'
 
-gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.4.1'
+gem "sassc", "2.2.1"
 
 gem 'devise'
 
